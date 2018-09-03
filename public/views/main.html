@@ -1,0 +1,55 @@
+<div class="map" layout="row" layout-align="center center">
+  <div class="map__intro" ng-if="!mainModel.view" layout="row" layout-align="center center">
+    <div class="map__whiteframe" md-whiteframe="{{height}}" ng-init="height = 3" ng-mouseenter="height = 6" ng-mouseleave="height = 3">
+      <p class="paragraph"><span class="bold">Witaj</span> w aplikacji umożliwiającej dostęp do <span class="bold">danych</span> dotyczących <span class="bold">jakości powietrza</span> w Polsce, wytwarzanych w ramach <span class="bold">Państwowego
+        Monitoringu Środowiska</span> i gromadzonych w bazie <span class="bold">JPOAT2,0.</span></p>
+      <p class="paragraph paragraph--margin-top">Powstała ona dzięki <a target="_blank" href="https://powietrze.gios.gov.pl/pjp/content/api"><span class="bold">API</span></a> portalu jakości powietrza.</p>
+      <md-button class="md-raised" ng-click="mainModel.getView()" ng-disabled="!mainModel.show">przejdź do aplikacji</md-button>
+      <p class="paragraph paragraph--margin-bottom"><span class="small">{{mainModel.info}}</span></p>
+      <md-progress-linear md-mode="indeterminate" ng-disabled="mainModel.show"></md-progress-linear>
+    </div>
+  </div>
+</div>
+<div id="map__google"></div>
+<div class="map__legend-container" ng-if="mainModel.view">
+  <div class="map__legend" style="border-bottom:4px solid #00B050;">
+    <p>Bardzo dobry</p>
+  </div>
+  <div class="map__legend" style="border-bottom:4px solid #92D050;">
+    <p>Dobry</p>
+  </div>
+  <div class="map__legend" style="border-bottom:4px solid #FFC700;">
+    <p>Umiarkowany</p>
+  </div>
+  <div class="map__legend" style="border-bottom:4px solid #FFC000;">
+    <p>Dostateczny</p>
+  </div>
+  <div class="map__legend" style="border-bottom:4px solid #FF0000;">
+    <p>Zły</p>
+  </div>
+  <div class="map__legend" style="border-bottom:4px solid #C00000;">
+    <p>Bardzo zły</p>
+  </div>
+</div>
+<md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4">
+  <div class="panel__img">
+    <img ng-src="./img/herby/{{googleMap.model.stationId}}.png" alt="herb">
+    <p class="paragraph--margin-top paragraph--margin-bottom">{{googleMap.model.stationName}}</p>
+  </div>
+  <div class="panel__info">
+    <p class="paragraph">Jakość powietrza według <a target="_blank" href="http://powietrze.gios.gov.pl/pjp/content/health_informations"><span class="bold">CAQI</span></a></p>
+    <div class="panel__caqi">
+      <p class="paragraph paragraph--caqi" ng-style="{background:googleMap.model.background}">{{googleMap.model.caqi}}</p>
+      <div class="panel__text">
+        <p class="paragraph"><span class="bold">{{googleMap.model.text1}}</span></p>
+        <p class="paragraph">{{googleMap.model.text2}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="map__charts">
+    <div ng-repeat="data in chart.dataset" style="width:95%;">
+        <p ng-bind-html="chart.getTitle(data.key)"></p>
+       <nvd3 options="chart.options" data="[data]"></nvd3>
+     </div>
+  </div>
+</md-sidenav>

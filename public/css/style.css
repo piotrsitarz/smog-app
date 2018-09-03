@@ -1,0 +1,162 @@
+* {
+  margin:0;
+  padding:0;
+}
+
+.map {
+  height:100vh;
+  width:100vw;
+}
+
+.map__intro {
+ background:  url("/img/industry.gif") no-repeat center center fixed;
+ background-size: cover;
+ position: absolute;
+ left: 0px;
+ top: 0px;
+ z-index: 3;
+ height:100vh;
+ width:100vw;
+}
+
+.map__whiteframe {
+  background-color:rgba(255, 255, 255, 0.7);
+  padding:25px;
+  width:500px;
+  text-align:center;
+}
+
+.map__whiteframe .md-button.md-raised {
+  margin:25px 0;
+}
+
+a {
+  color:black;
+}
+
+.bold {
+  font-weight:bold;
+}
+
+.small {
+  font-size:16px;
+}
+
+.paragraph {
+  font-size:22px;
+  line-height: 1.5;
+}
+
+.paragraph--chart-title {
+  text-align:center;
+  position:relative;
+  top:30px;
+  font-weight:bold;
+  font-size:26px;
+  border-top:1px solid black;
+}
+
+.paragraph--margin-top {
+  margin-top:20px;
+}
+
+.paragraph--margin-bottom {
+  margin-bottom:20px;
+}
+
+.paragraph--caqi {
+  line-height:80px;;
+  width:80px;
+  color:white;
+  font-weight:500;
+  font-size:26px;
+  margin:20px auto;
+}
+
+md-progress-linear .md-bar {
+    background-color: white;
+}
+
+md-progress-linear .md-container {
+    background-color: grey;
+}
+
+#map__google {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 2;
+  height:100vh;
+  width:100%;
+}
+
+.map__legend-container{
+  position:fixed;
+  top:20px;
+  right:100px;
+  z-index:6;
+  background:white;
+  padding:5px 8px 12px 8px;
+}
+
+.map__legend {
+  display:inline-block;
+  width:100px;
+  text-align:center;
+}
+
+md-sidenav, md-sidenav.md-locked-open, md-sidenav.md-closed.md-locked-open-add-active {
+  width: 50%;
+  min-width: 50%;
+  max-width: 50%;
+  left: 0px;
+  top: 0px;
+  height:100vh;
+  overflow-y: scroll;
+  margin:0 auto;
+  background:#f5f5f5;
+}
+
+.panel__img {
+  width:100%;
+  padding-top:50px;
+}
+
+.panel__img img {
+  width:250px;
+  padding-left:calc(50% - 125px);
+}
+
+.panel__img p {
+  text-align:center;
+}
+
+.map__charts {
+  width:100%;
+  height:auto;
+  padding-left:2.5%;
+  box-sizing: border-box;
+  background:white;
+}
+
+.panel__info {
+  width:100%;
+  text-align:center;
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+   md-sidenav, md-sidenav.md-locked-open, md-sidenav.md-closed.md-locked-open-add-active {
+    min-width: 100%;
+    max-width: 100%;
+    width:100%;
+    top:50vh!important;
+    height:50vh;
+    overflow-y: scroll;
+    margin:0 auto;
+  }
+
+  .map__legend-container {
+    right:0;
+  }
+}

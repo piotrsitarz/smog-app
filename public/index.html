@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="smogApp">
+ <head>
+
+   <title> smogApp </title>
+
+   <meta charset="utf-8">
+   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.css"/>
+	 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.css">
+	 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+   <link rel="stylesheet" property="stylesheet" href="css/style.css">
+
+ </head>
+ <body ng-cloak>
+
+     <div ng-view></div>
+
+     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFGj_OUR5a8pBV81lnlvI9536XrgYJ0kw"></script>
+		 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+		 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-animate.min.js"></script>
+		 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-aria.min.js"></script>
+		 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-messages.min.js"></script>
+		 <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-route.min.js"></script>
+
+
+		 <script src="js/dev/app.js"></script>
+		 <script src="js/dev/controllers/main.controller.js"></script>
+     <script src="js/dev/services/mainModel.service.js"></script>
+     <script src="js/dev/services/chart.service.js"></script>
+     <script src="js/dev/services/googleMap.service.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.6/nv.d3.min.js"></script>
+     <script src="https://rawgit.com/krispo/angular-nvd3/v1.0.5/dist/angular-nvd3.js"></script>
+
+
+
+ </body>
+</html>
