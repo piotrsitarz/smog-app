@@ -9,7 +9,7 @@
 }
 
 .map__intro {
- background:  url("/img/industry.gif") no-repeat center center fixed;
+ background-image: url(/img/industry.gif);
  background-size: cover;
  position: absolute;
  left: 0px;
@@ -92,7 +92,8 @@ md-progress-linear .md-container {
 
 .map__legend-container{
   position:fixed;
-  top:20px;
+  text-align: center;
+  top:10px;
   right:100px;
   z-index:6;
   background:white;
@@ -154,9 +155,5 @@ md-sidenav, md-sidenav.md-locked-open, md-sidenav.md-closed.md-locked-open-add-a
     height:50vh;
     overflow-y: scroll;
     margin:0 auto;
-  }
-
-  .map__legend-container {
-    right:0;
   }
 }

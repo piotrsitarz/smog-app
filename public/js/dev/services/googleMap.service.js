@@ -25,8 +25,13 @@ angular.module('smogApp')
         var opcjeMapy = {
             zoom: 7,
             center: center,
-            mapTypeId: google.maps.MapTypeId.roadmap
-        };
+            mapTypeId: google.maps.MapTypeId.roadmap,
+            mapTypeControl: true,
+            mapTypeControlOptions: {
+                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                position: google.maps.ControlPosition.BOTTOM_LEFT
+            }
+          }
         var mapa = new google.maps.Map(document.getElementById("map__google"), opcjeMapy);
 
         factory.addMarkers = function(station) {
