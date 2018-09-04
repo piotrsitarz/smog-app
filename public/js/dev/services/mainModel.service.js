@@ -15,7 +15,7 @@ angular.module('smogApp')
             } else if (response.status === 200) {
               factory.show = true;
               factory.info = 'Dane zostały wczytane!';
-              for (let i = 0, len = response.data.length; i < len; i++) {
+              for (var i = 0, len = response.data.length; i < len; i++) {
                 googleMap.addMarkers(response.data[i]);
               };
             }

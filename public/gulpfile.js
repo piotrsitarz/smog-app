@@ -22,7 +22,7 @@ gulp.task('default', function() {
 gulp.task('js-concat', function() {
     return gulp.src(['./js/dev/app.js', './js/dev/controllers/*.controller.js', './js/dev/services/*.service.js'])
 	    .pipe(plumber())
-			.pipe(concat('app-concated.js', {newLine: ';'}))
+			.pipe(concat('application.min.js', {newLine: ';'}))
 			.pipe(ngAnnotate({add: true}))
 	    .pipe(plumber.stop())
       .pipe(gulp.dest('js/dev/'));
