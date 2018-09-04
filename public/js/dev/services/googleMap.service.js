@@ -2,7 +2,7 @@
 
 angular.module('smogApp')
 
-    .factory('googleMap', ['$http','chart','$timeout','$mdSidenav', function($http,chart,$timeout,$mdSidenav) {
+    .factory('googleMap', ['chart','$timeout','$mdSidenav', function(chart,$timeout,$mdSidenav) {
 
         var factory = {};
 
@@ -540,7 +540,7 @@ angular.module('smogApp')
                         break;
                       }
 
-                  var ikona1 = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor, rozmiar, punkt_startowy, punkt_zaczepienia);
+                  var ikona1 = new google.maps.MarkerImage("https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor, rozmiar, punkt_startowy, punkt_zaczepienia);
                   var punkt  = new google.maps.LatLng(station.stationGegrLat, station.stationGegrLon);
 
                   var opcjeMarkera = {

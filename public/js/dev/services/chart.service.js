@@ -2,7 +2,7 @@
 
 angular.module('smogApp')
 
-    .factory('chart', ['$http','$timeout','$window', function($http,$timeout,$window) {
+    .factory('chart', ['$timeout','$window', function($timeout,$window) {
 
         var factory = {};
 
