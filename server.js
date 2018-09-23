@@ -11,13 +11,10 @@ app.get('/mainModel',(req, res) => {
   var modelData = [];
 
   request('https://api.gios.gov.pl/pjp-api/rest/station/findAll', (err, res, body) => {
-    console.log('a');
     if (res.statusCode === 503) {
       req.res.end('server not available');
-          console.log('b');
     }
     var stations = JSON.parse(body);
-    console.log(stations);
 
     for (let i = 0; i < stations.length; i++) {
 

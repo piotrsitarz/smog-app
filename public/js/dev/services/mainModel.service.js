@@ -8,9 +8,7 @@ angular.module('smogApp')
         factory.info = 'Proszę czekać trwa wczytywanie danych!';
 
         factory.get = function() {
-          console.log('getModel?');
           $http.get('/mainModel').then(function successCallback(response) {
-            console.log(response.data);
             if (response.data === 'server not available') {
               factory.show = false;
               factory.info = 'Pobranie danych jest teraz niemożliwe, spróbuj później.';
