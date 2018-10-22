@@ -10,10 +10,7 @@ app.get('/mainModel',(req, res) => {
 
   var modelData = [];
 
-  request('https://api.gios.gov.pl/pjp-api/rest/station/findAll', (err, res, body) => {
-    if (res.statusCode === 503) {
-      req.res.end('server not available');
-    }
+  request('http://api.gios.gov.pl/pjp-api/rest/station/findAll', (err, res, body) => {
     var stations = JSON.parse(body);
 
     for (let i = 0; i < stations.length; i++) {
@@ -30,7 +27,7 @@ app.get('/mainModel',(req, res) => {
 
       var sensorsCounter = 0;
       var iteration = 0;
-      request(`https://api.gios.gov.pl/pjp-api/rest/station/sensors/${stationId}`, (err, res, body) => {
+      request(`http://api.gios.gov.pl/pjp-api/rest/station/sensors/${stationId}`, (err, res, body) => {
 
         if (body !== undefined) {
           var sensors = JSON.parse(body);
@@ -38,7 +35,7 @@ app.get('/mainModel',(req, res) => {
 
           for (let j = 0; j < sensors.length; j++) {
 
-            request(`https://api.gios.gov.pl/pjp-api/rest/data/getData/${sensors[j].id}`, (err, res, body) => {
+            request(`http://api.gios.gov.pl/pjp-api/rest/data/getData/${sensors[j].id}`, (err, res, body) => {
 
               if (body !== undefined) {
                 var values = JSON.parse(body);
